@@ -13,7 +13,6 @@ A stunning, responsive portfolio website template built with Next.js 14, TypeScr
 - 🌈 Beautiful Gradient Effects
 - 🎯 Interactive Particle Background
 - 📝 Contact Form with Validation
-- 🌐 Multi-language Support
 - 🎯 SEO Optimized
 - 🚀 Fast Performance
 - 🎨 Customizable Theme
