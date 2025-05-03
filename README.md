@@ -145,8 +145,7 @@ For detailed documentation, please visit our [documentation site](https://docs.y
 - Initial release
 - Basic portfolio features
 - Responsive design
-- Multi-language support
-
+  
 ## 🎯 Roadmap
 
 - [ ] More animation options
