@@ -165,4 +165,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Name - @Ahmad_Khan - imahmadkhan1029@gmail.com
 
-Project Link: (https://github.com/imahmad00987655/portfolio-template) 
+Project Link: [https://github.com/imahmad00987655/portfolio-template](https://github.com/imahmad00987655/portfolio-template)
