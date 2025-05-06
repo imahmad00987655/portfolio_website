@@ -122,7 +122,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent animate-pulse"></div>
@@ -656,34 +656,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="pt-6 border-t border-white/10">
-                  <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
-                    Connect with me
-                  </h4>
-                  <div className="flex gap-4">
-                    {[
-                      { icon: 'github', url: 'https://github.com/yourusername' },
-                      { icon: 'linkedin', url: 'https://linkedin.com/in/yourusername' },
-                      { icon: 'twitter', url: 'https://twitter.com/yourusername' }
-                    ].map((social, index) => (
-                      <motion.a
-                        key={social.icon}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors relative group"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative">
-                          {/* Social icons remain the same */}
-                        </div>
-                      </motion.a>
-                    ))}
-                  </div>
+                  {/* Social icons and 'Connect with me' heading removed as requested */}
                 </div>
               </div>
             </motion.div>

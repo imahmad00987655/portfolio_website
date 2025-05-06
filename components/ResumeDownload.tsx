@@ -39,8 +39,8 @@ const ResumeDownload = () => {
           <div className="flex flex-wrap justify-center gap-6">
             {/* Download Button */}
             <motion.a
-              href="/resume.pdf"
-              download
+              href="/mycv.pdf"
+              download="Ahmad_Khan_Resume.pdf"
               className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -87,21 +87,21 @@ const ResumeDownload = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-sm"
             onClick={() => setIsPreviewOpen(false)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-4xl bg-gray-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10"
+              className="relative w-full max-w-lg h-[90vh] sm:h-[80vh] md:h-[85vh] lg:h-[80vh] bg-gray-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10 flex flex-col mx-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-6 border-b border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10">
+              <div className="p-4 sm:p-6 border-b border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10">
                 <div className="flex justify-between items-center">
                   <motion.h3 
-                    className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+                    className="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
@@ -110,7 +110,7 @@ const ResumeDownload = () => {
                   </motion.h3>
                   <motion.button
                     onClick={() => setIsPreviewOpen(false)}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors p-2"
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -122,26 +122,30 @@ const ResumeDownload = () => {
               </div>
 
               {/* Modal Content */}
-              <div className="p-6">
-                <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden">
+              <div className="flex-1 p-2 sm:p-4 md:p-6 overflow-hidden">
+                <div className="w-full h-full bg-white rounded-lg overflow-hidden">
                   <iframe
-                    src="/resume.pdf"
+                    src="/mycv.pdf"
                     className="w-full h-full"
                     title="Resume Preview"
                   />
                 </div>
+              </div>
 
-                <div className="mt-6 flex justify-end gap-4">
-                  <motion.a
-                    href="/resume.pdf"
-                    download
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Download PDF
-                  </motion.a>
-                </div>
+              {/* Download Button */}
+              <div className="p-4 sm:p-6 border-t border-white/10 bg-gradient-to-r from-blue-500/5 to-purple-500/5">
+                <motion.a
+                  href="/mycv.pdf"
+                  download="Ahmad_Khan_Resume.pdf"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download PDF
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
