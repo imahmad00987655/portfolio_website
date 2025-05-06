@@ -60,7 +60,7 @@ The Modern Portfolio Website is a professional, responsive portfolio template bu
 ### Method 1: Using Git
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/imahmad00987655/portfolio-template
 
 # Navigate to project directory
 cd portfolio
@@ -103,7 +103,7 @@ npm run start
 
 4. **Access the Website**
 - Development: [http://localhost:3000](http://localhost:3000)
-- Production: Your deployed URL
+- Production: deployed URL = portfolio-template-orpin-eta.vercel.app
 
 ## Features
 
@@ -113,7 +113,6 @@ npm run start
 - Blog section with filtering
 - Project showcase
 - Contact form with validation
-- Newsletter integration
 - Social media integration
 - Resume download functionality
 
@@ -256,7 +255,6 @@ module.exports = {
 The navigation bar includes:
 - Logo
 - Navigation links
-- Theme toggle
 - Mobile menu
 - Social media links
 
@@ -539,9 +537,8 @@ For support, please:
    - Screenshots if applicable
 
 ### Contact
-- Email: your.email@example.com
-- Twitter: [@your_twitter](https://twitter.com/your_twitter)
-- GitHub: [yourusername](https://github.com/yourusername)
+- Email: imahmadkhan1029@gmail.com
+- GitHub: Ahmad_Khan (https://github.com/imahmad00987655/portfolio-template)
 
 ## Changelog
 
@@ -565,7 +562,6 @@ For support, please:
 - [Google Fonts](https://fonts.google.com/)
 
 ### Images and Icons
-- [Unsplash](https://unsplash.com/)
 - [Icons8](https://icons8.com/)
 
 ### Fonts
@@ -573,7 +569,3 @@ For support, please:
   - Playfair Display
   - Poppins
   - Inter
-
----
-
-This documentation is regularly updated. For the latest version, please check the repository. 

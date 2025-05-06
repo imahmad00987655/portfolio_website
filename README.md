@@ -2,8 +2,6 @@
 
 A stunning, responsive portfolio website template built with Next.js 14, TypeScript, and Tailwind CSS. Perfect for developers, designers, and creative professionals to showcase their work.
 
-![Portfolio Preview](preview.png)
-
 ## 🌟 Features
 
 - 🎨 Modern and Clean Design
@@ -13,7 +11,6 @@ A stunning, responsive portfolio website template built with Next.js 14, TypeScr
 - 🌈 Beautiful Gradient Effects
 - 🎯 Interactive Particle Background
 - 📝 Contact Form with Validation
-- 🌐 Multi-language Support
 - 🎯 SEO Optimized
 - 🚀 Fast Performance
 - 🎨 Customizable Theme
@@ -23,7 +20,7 @@ A stunning, responsive portfolio website template built with Next.js 14, TypeScr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/portfolio-template.git
+   git clone https://github.com/imahmad00987655/portfolio-template
    ```
 
 2. **Install dependencies**
@@ -125,8 +122,8 @@ This template is licensed under the [MIT License](LICENSE).
 
 If you have any questions or need help, please:
 1. Check the [documentation](docs/)
-2. Open an [issue](https://github.com/yourusername/portfolio-template/issues)
-3. Contact support at support@yourdomain.com
+2. Open an [issue]https://github.com/imahmad00987655/portfolio-template/issues
+3. Contact support at imahmadkhan1029@gmail.com
 
 ## 🙏 Credits
 
@@ -138,7 +135,7 @@ If you have any questions or need help, please:
 
 ## 📄 Documentation
 
-For detailed documentation, please visit our [documentation site](https://docs.yourdomain.com).
+For detailed documentation, please visit our [documentation site] https://zeptechlogix.com/.
 
 ## 🔄 Updates
 
@@ -146,7 +143,6 @@ For detailed documentation, please visit our [documentation site](https://docs.y
 - Initial release
 - Basic portfolio features
 - Responsive design
-- Multi-language support
 
 ## 🎯 Roadmap
 
@@ -167,6 +163,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
+Name - @Ahmad_Khan - imahmadkhan1029@gmail.com
 
-Project Link: [https://github.com/yourusername/portfolio-template](https://github.com/yourusername/portfolio-template) 
+Project Link: (https://github.com/imahmad00987655/portfolio-template) 
