@@ -16,42 +16,102 @@ const ContactForm = () => {
   const [showCopySuccess, setShowCopySuccess] = useState(false);
   const [showExperienceBanner, setShowExperienceBanner] = useState(true);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [orbs, setOrbs] = useState([]);
+  const [particles, setParticles] = useState([]);
+  const [animatedElements, setAnimatedElements] = useState([]);
   const [mounted, setMounted] = useState(false);
-  const emailRef = useRef('your.email@example.com');
+  const emailRef = useRef('imahmadkhan1029@gmail.com');
 
   useEffect(() => {
     setMounted(true);
+    
+    // Generate fixed values for orbs
+    setOrbs([
+      {
+        width: 200,
+        height: 200,
+        left: '20%',
+        top: '20%',
+        xMove: 30,
+        yMove: 20,
+        duration: 20
+      },
+      {
+        width: 250,
+        height: 250,
+        right: '20%',
+        top: '30%',
+        xMove: -30,
+        yMove: 30,
+        duration: 25
+      },
+      {
+        width: 180,
+        height: 180,
+        left: '50%',
+        bottom: '20%',
+        xMove: 20,
+        yMove: -20,
+        duration: 22
+      }
+    ]);
+    
+    // Generate fixed values for particles
+    const newParticles = [];
+    for (let i = 0; i < 6; i++) {
+      newParticles.push({
+        left: `${20 + (i * 15)}%`,
+        top: `${30 + (i * 10)}%`,
+        duration: 2 + i
+      });
+    }
+    setParticles(newParticles);
+    
+    // Generate fixed values for animated elements
+    const newAnimatedElements = [];
+    for (let i = 0; i < 5; i++) {
+      newAnimatedElements.push({
+        width: 100 + i * 30,
+        height: 100 + i * 30,
+        left: `${i * 20}%`,
+        top: `${i * 20}%`,
+        xMove: i * 10,
+        yMove: i * 10,
+        duration: 10 + i
+      });
+    }
+    setAnimatedElements(newAnimatedElements);
   }, []);
 
   // Work experience data
   const workExperience = [
     {
-      company: "Tech Innovators Inc.",
-      position: "Senior Web Developer",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
+      company: "Master Molty Foam",
+      position: "Software Developer",
+      period: "Feb 2024 - Present",
+      location: "",
       achievements: [
-        "Led development of enterprise-level web applications",
-        "Mentored junior developers and conducted code reviews",
-        "Implemented CI/CD pipelines and automated testing",
-        "Optimized application performance and reduced load times by 40%"
+        "Maintained and updated the company's legacy website, ensuring functionality and performance improvements",
+        "Developed various custom websites and dashboards, tailored to departmental needs for improved data visualization and accessibility",
+        "Designed and implemented multiple forms for the department's internal website, optimizing workflows and information collection",
+        "Created and customized Power BI dashboards to present data insights effectively, aiding decision-making"
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes"],
-      impact: "Increased team productivity by 60% and reduced deployment time by 75%"
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "PHP/Laravel", "Python", "Vue.js" ],
+      impact: "Improved departmental efficiency through custom solutions and data-driven insights"
     },
     {
-      company: "Digital Solutions Ltd",
-      position: "Full Stack Developer",
-      period: "2020 - 2022",
-      location: "New York, NY",
+      company: "Programmers Force",
+      position: "Front-End Developer Intern",
+      period: "Nov 2022 - Jan 2023",
+      location: "",
       achievements: [
-        "Developed and maintained multiple client projects",
-        "Integrated third-party APIs and payment gateways",
-        "Implemented responsive designs and cross-browser compatibility",
-        "Collaborated with UX/UI designers for optimal user experience"
+        "Developed high end websites, utilizing HTML, CSS, JavaScript, Bootstrap and node.js, php, python to create an interactive, user-friendly interface",
+        "Applied responsive design principles and UX best practices to ensure a seamless user experience across various devices and browsers",
+        "Engaged in collaborative coding and peer review processes, participating in version control and team discussions to enhance code quality and ensure consistent standards across projects",
+        "Gained foundational experience in frontend technologies, enhancing problem-solving skills and developing a deeper understanding of the frontend development lifecycle"
       ],
-      technologies: ["JavaScript", "Python", "MongoDB", "Express", "React"],
-      impact: "Successfully delivered 15+ projects with 98% client satisfaction"
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js"],
+      impact: "Contributed to team success through collaborative development and implementation of responsive web solutions"
     }
   ];
 
@@ -82,17 +142,36 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Simulate form submission
-      setTimeout(() => {
+      try {
+        const response = await fetch('https://formspree.io/f/xdkgynap', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          }),
+        });
         setIsSubmitting(false);
-        setShowSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setShowSuccess(false), 3000);
-      }, 1500);
+        if (response.ok) {
+          setShowSuccess(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setTimeout(() => setShowSuccess(false), 3000);
+        } else {
+          setErrors({ general: 'Failed to send message. Please try again later.' });
+        }
+      } catch (error) {
+        setIsSubmitting(false);
+        setErrors({ general: 'Failed to send message. Please try again later.' });
+      }
     }
   };
 
@@ -133,83 +212,52 @@ const ContactForm = () => {
       {/* Floating orbs with fixed positions */}
       {mounted && (
         <>
-          <motion.div
-            className="absolute rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
-            style={{
-              width: '200px',
-              height: '200px',
-              left: '20%',
-              top: '20%',
-            }}
-            animate={{
-              x: [0, 30, 0],
-              y: [0, 20, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl"
-            style={{
-              width: '250px',
-              height: '250px',
-              right: '20%',
-              top: '30%',
-            }}
-            animate={{
-              x: [0, -30, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute rounded-full bg-gradient-to-r from-pink-500/20 to-blue-500/20 blur-3xl"
-            style={{
-              width: '180px',
-              height: '180px',
-              left: '50%',
-              bottom: '20%',
-            }}
-            animate={{
-              x: [0, 20, 0],
-              y: [0, -20, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+          {orbs.map((orb, i) => (
+            <motion.div
+              key={`orb-${i}`}
+              className="absolute rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
+              style={{
+                width: `${orb.width}px`,
+                height: `${orb.height}px`,
+                left: orb.left,
+                right: orb.right,
+                top: orb.top,
+                bottom: orb.bottom,
+                position: 'absolute'
+              }}
+              animate={{
+                x: [0, orb.xMove, 0],
+                y: [0, orb.yMove, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: orb.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
         </>
       )}
 
       {/* Animated particles with fixed positions */}
       {mounted && (
         <>
-          {[...Array(6)].map((_, i) => (
+          {particles.map((particle, i) => (
             <motion.div
               key={`particle-${i}`}
               className="absolute w-1 h-1 bg-white rounded-full"
               style={{
-                left: `${20 + (i * 15)}%`,
-                top: `${30 + (i * 10)}%`,
+                left: particle.left,
+                top: particle.top,
+                position: 'absolute'
               }}
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
               }}
               transition={{
-                duration: 2 + i,
+                duration: particle.duration,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
@@ -232,23 +280,24 @@ const ContactForm = () => {
               <div className="relative bg-gradient-to-r from-blue-600/95 via-purple-600/95 to-pink-600/95 backdrop-blur-md border-b border-white/10 shadow-xl">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 overflow-hidden">
-                  {[...Array(5)].map((_, i) => (
+                  {animatedElements.map((elem, i) => (
                     <motion.div
-                      key={i}
+                      key={`bg-elem-${i}`}
                       className="absolute rounded-full bg-white/10"
                       style={{
-                        width: `${Math.random() * 200 + 50}px`,
-                        height: `${Math.random() * 200 + 50}px`,
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
+                        width: `${elem.width}px`,
+                        height: `${elem.height}px`,
+                        left: elem.left,
+                        top: elem.top,
+                        position: 'absolute'
                       }}
                       animate={{
-                        x: [0, Math.random() * 100 - 50],
-                        y: [0, Math.random() * 100 - 50],
+                        x: [0, elem.xMove],
+                        y: [0, elem.yMove],
                         scale: [1, 1.2, 1],
                       }}
                       transition={{
-                        duration: Math.random() * 10 + 10,
+                        duration: elem.duration,
                         repeat: Infinity,
                         repeatType: "reverse",
                         ease: "easeInOut",
@@ -570,6 +619,16 @@ const ContactForm = () => {
                     </motion.p>
                   )}
                 </div>
+
+                {errors.general && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-1 text-sm text-red-500"
+                  >
+                    {errors.general}
+                  </motion.p>
+                )}
 
                 <motion.button
                   type="submit"

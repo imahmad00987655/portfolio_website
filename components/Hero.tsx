@@ -23,7 +23,7 @@ const Hero = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Frontend Developer', 'UI/UX Designer', 'React Developer'],
+      strings: ['Full Stack Developer 💻', 'Web App Developer 🌐', 'Mobile App Developer 📱', 'Data Visualization Expert 📊', 'API Engineer 🔌'],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
@@ -232,8 +232,8 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                Passionate about creating beautiful and functional web experiences. 
-                Let's build something amazing together!
+                ✨ Passionate about creating beautiful and functional web experiences 🌐, mobile applications 📱, 
+                and data visualization in custom dashboards 📊. Let's build something amazing together! 🚀
               </motion.p>
             </motion.div>
 
@@ -274,7 +274,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="flex-1 flex justify-center"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] mt-8">
               {/* Outer rotating ring */}
               <motion.div
                 className="absolute inset-0 rounded-full"
@@ -305,9 +305,14 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 {/* Replace with your profile picture */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center text-white text-lg">
-                  Add Your Photo
-                </div>
+                <Image
+                  src="/profile.jpg.png"
+                  alt="Profile photo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
 
                 {/* Shine effect overlay */}
                 <motion.div

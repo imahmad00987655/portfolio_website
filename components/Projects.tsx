@@ -7,75 +7,80 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'fra
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Dashboards",
     category: "web",
-    image: "/placeholder.jpg",
-    description: "A full-stack e-commerce platform built with Next.js and Node.js",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    demo: "https://demo.com",
-    github: "https://github.com",
+    description: "Developed comprehensive dashboards for the customer services department using React, Vue.js, and Power BI. Implemented real-time data visualization, customer interaction tracking, and performance metrics to improve service efficiency and decision-making.",
+    technologies: ["React", "Vue.js", "Power BI", "Node.js", "Data Visualization"],
+    demo: "https://drive.google.com/drive/folders/1411zyfDO-W_5lp2YXf1C2UDWrmJapwNI",
+    github: "https://github.com/imahmad00987655",
     featured: true
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Callback Disposition System",
     category: "web",
-    image: "/placeholder.jpg",
-    description: "A collaborative task management application with real-time updates",
-    technologies: ["React", "Firebase", "Tailwind CSS"],
+    description: "Built a sophisticated callback disposition form system using PHP/Laravel to track and manage customer interaction history. Features include automated call scheduling, interaction logging, and performance analytics.",
+    technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"],
     demo: "https://demo.com",
     github: "https://github.com",
     featured: true
   },
   {
     id: 3,
-    title: "AI Image Generator",
-    category: "ai",
-    image: "/placeholder.jpg",
-    description: "An AI-powered image generation tool using Stable Diffusion",
-    technologies: ["Python", "TensorFlow", "React"],
+    title: "AI-Powered Travel App",
+    category: "mobile",
+    description: "Developed a cross-platform travel application using Flutter and Node.js, integrated with AI features for personalized travel recommendations, route optimization, and smart itinerary planning.",
+    technologies: ["Flutter", "Node.js", "AI/ML", "REST APIs", "Firebase"],
     demo: "https://demo.com",
-    github: "https://github.com",
+    github: "https://github.com/imahmad00987655/AI_travel_mobile_application",
     featured: true
   },
   {
-    id: 4,
-    title: "Portfolio Website",
-    category: "design",
-    image: "/placeholder.jpg",
-    description: "A modern portfolio website with smooth animations",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    demo: "https://demo.com",
-    github: "https://github.com",
-    featured: false
-  },
-  {
     id: 5,
-    title: "Weather Dashboard",
+    title: "Graphic website",
     category: "web",
-    image: "/placeholder.jpg",
-    description: "Real-time weather dashboard with location tracking",
-    technologies: ["React", "OpenWeather API", "Chart.js"],
+    description: "Designed and developed a modern portfolio website for graphic designers using Vue.js and React. Features include project galleries, client testimonials, and interactive design showcases.",
+    technologies: ["Vue.js", "React", "Tailwind CSS", "Framer Motion"],
     demo: "https://demo.com",
-    github: "https://github.com",
-    featured: false
+    github: "https://github.com/imahmad00987655/Makers",
+    featured: true
   },
   {
     id: 6,
-    title: "Chat Application",
+    title: "API Integration Framework",
     category: "web",
-    image: "/placeholder.jpg",
-    description: "Real-time chat application with end-to-end encryption",
-    technologies: ["Socket.io", "React", "Node.js"],
+    description: "Developed a robust API integration and testing framework using Node.js. Implemented automated testing, data validation, and seamless data transfer between different systems.",
+    technologies: ["Node.js", "Express", "Mysql", "Postman", "MongoDB"],
     demo: "https://demo.com",
-    github: "https://github.com",
-    featured: false
+    github: "https://github.com/imahmad00987655/Customer_service_api",
+    featured: true
+  },
+  {
+    id: 7,
+    title: "Personal Portfolio",
+    category: "web",
+    description: "Built a modern, responsive portfolio website using Next.js. Features include smooth animations, dark mode, and interactive project showcases.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    demo: "https://demo.com",
+    github: "https://github.com/imahmad00987655/portfolio_website",
+    featured: true
+  },
+  {
+    id: 8,
+    title: "Visa Consultancy CRM",
+    category: "web",
+    description: "Developed a specialized CRM system for visa consultancy and advisory services using PHP/Laravel. Features include client visa application tracking, document management system, appointment scheduling, case status updates, automated email notifications, and multi-country visa requirement database. Implemented secure document storage, client communication portal, and comprehensive reporting for visa success rates and processing times.",
+    technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap", "Redis", "WebSockets", "AWS S3"],
+    demo: "https://demo.com",
+    github: "https://github.com/imahmad00987655/CRM_in_php",
+    featured: true
   }
 ];
 
 const categories = [
   { id: 'all', name: 'All Projects', icon: '✨' },
   { id: 'web', name: 'Web Development', icon: '🌐' },
+  { id: 'mobile', name: 'Mobile Development', icon: '📱' },
   { id: 'ai', name: 'AI/ML', icon: '🤖' },
   { id: 'design', name: 'Design', icon: '🎨' }
 ];
@@ -234,16 +239,7 @@ const Projects = () => {
                   className="group relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
                 >
                   {/* Project Image with enhanced hover effect */}
-                  <div className="relative aspect-video overflow-hidden">
-                    <motion.div 
-                      className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center text-white"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      Project Image
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
+                  
 
                   {/* Project Info with enhanced animations */}
                   <div className="p-6">
@@ -339,13 +335,7 @@ const Projects = () => {
 
               {/* Modal Content */}
               <div className="p-6 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 80px)' }}>
-                <motion.div 
-                  className="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg mb-6 flex items-center justify-center text-white overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Project Image
-                </motion.div>
+                
                 
                 <motion.p 
                   className="text-gray-300 mb-6 leading-relaxed"
@@ -390,7 +380,7 @@ const Projects = () => {
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-center font-medium hover:opacity-90 transition-opacity"
                     >
-                      Live Demo
+                      Demo
                     </motion.a>
                     <motion.a
                       href={selectedProject.github}

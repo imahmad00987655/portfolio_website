@@ -33,7 +33,7 @@ The Modern Portfolio Website is a professional, responsive portfolio template bu
 - Support files
 
 ### Demo
-- Live Demo: [https://your-portfolio-demo.com](https://your-portfolio-demo.com)
+- Live Demo: [http://portfolio-website-theta-six-74.vercel.app]
 - Video Demo: [https://youtube.com/watch?v=your-video-id](https://youtube.com/watch?v=your-video-id)
 
 ## Requirements
@@ -60,7 +60,7 @@ The Modern Portfolio Website is a professional, responsive portfolio template bu
 ### Method 1: Using Git
 ```bash
 # Clone the repository
-git clone https://github.com/imahmad00987655/portfolio-template
+git clone https://github.com/imahmad00987655/portfolio_website
 
 # Navigate to project directory
 cd portfolio
@@ -144,12 +144,14 @@ portfolio/
 │   ├── Footer.tsx        # Footer component
 │   ├── Hero.tsx          # Hero section
 │   ├── Navbar.tsx        # Navigation bar
-│   └── Projects.tsx      # Projects section
+│   ├── Projects.tsx      # Projects section
+│   └── ResumeDownload.tsx # CV preview and download section
 ├── data/                 # Data files
 │   ├── blog.ts          # Blog posts data
 │   ├── experience.ts    # Experience data
 │   └── projects.ts      # Projects data
 ├── public/              # Static files
+│   ├── mycv.pdf        # CV/Resume PDF file
 │   └── images/         # Image assets
 ├── styles/             # Global styles
 │   └── globals.css     # Global CSS
@@ -538,7 +540,7 @@ For support, please:
 
 ### Contact
 - Email: imahmadkhan1029@gmail.com
-- GitHub: Ahmad_Khan (https://github.com/imahmad00987655/portfolio-template)
+- GitHub: Ahmad_Khan (https://github.com/imahmad00987655/portfolio_website)
 
 ## Changelog
 

@@ -20,7 +20,7 @@ A stunning, responsive portfolio website template built with Next.js 14, TypeScr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/imahmad00987655/portfolio-template
+   git clone https://github.com/imahmad00987655/portfolio_website
    ```
 
 2. **Install dependencies**
@@ -122,7 +122,7 @@ This template is licensed under the [MIT License](LICENSE).
 
 If you have any questions or need help, please:
 1. Check the [documentation](docs/)
-2. Open an [issue]https://github.com/imahmad00987655/portfolio-template/issues
+2. Open an [issue]https://github.com/imahmad00987655/portfolio_website/issues
 3. Contact support at imahmadkhan1029@gmail.com
 
 ## 🙏 Credits
@@ -135,7 +135,7 @@ If you have any questions or need help, please:
 
 ## 📄 Documentation
 
-For detailed documentation, please visit our [documentation site] https://zeptechlogix.com/.
+For detailed documentation, please read the documentation.md file.
 
 ## 🔄 Updates
 
@@ -165,4 +165,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Name - @Ahmad_Khan - imahmadkhan1029@gmail.com
 
-Project Link: [https://github.com/imahmad00987655/portfolio-template](https://github.com/imahmad00987655/portfolio-template)
+Live Preview Project Link: [http://portfolio-website-theta-six-74.vercel.app]

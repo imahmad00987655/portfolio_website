@@ -13,8 +13,22 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Your Portfolio',
+  title: 'M Ahmad Khan',
   description: 'Welcome to my portfolio website showcasing my work and experience.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      }
+    ],
+    apple: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      }
+    ],
+  },
 };
 
 export default function RootLayout({
