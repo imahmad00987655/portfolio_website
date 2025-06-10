@@ -165,4 +165,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 Name - @Ahmad_Khan - imahmadkhan1029@gmail.com
 
-Live Preview Project Link: [http://portfolio-website-theta-six-74.vercel.app]
+Live Preview Project Link: [www.muhammadahmadkhan.com]
