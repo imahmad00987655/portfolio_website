@@ -262,31 +262,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-white">Experience</h4>
-              <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-white/5">
-                  <h5 className="text-lg font-medium text-white">Software Developer</h5>
-                  <p className="text-gray-400">Master Molty Foam • Feb 2024 - Present</p>
-                  <ul className="text-gray-300 mt-2 space-y-2 list-disc list-inside">
-                    <li>Maintained and updated the company's legacy website, ensuring functionality and performance improvements</li>
-                    <li>Developed various custom websites and dashboards, tailored to departmental needs for improved data visualization and accessibility</li>
-                    <li>Designed and implemented multiple forms for the department's internal website, optimizing workflows and information collection</li>
-                    <li>Created and customized Power BI dashboards to present data insights effectively, aiding decision-making</li>
-                  </ul>
-                </div>
-                <div className="p-4 rounded-lg bg-white/5">
-                  <h5 className="text-lg font-medium text-white">Front-End Developer Intern</h5>
-                  <p className="text-gray-400">Programmers Force • Nov 2022 - Jan 2023</p>
-                  <ul className="text-gray-300 mt-2 space-y-2 list-disc list-inside">
-                    <li>Developed high end websites, utilizing HTML, CSS, JavaScript, Bootstrap and node.js, php, python to create an interactive, user-friendly interface</li>
-                    <li>Applied responsive design principles and UX best practices to ensure a seamless user experience across various devices and browsers</li>
-                    <li>Engaged in collaborative coding and peer review processes, participating in version control and team discussions to enhance code quality and ensure consistent standards across projects</li>
-                    <li>Gained foundational experience in frontend technologies, enhancing problem-solving skills and developing a deeper understanding of the frontend development lifecycle</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            
           </motion.div>
         </div>
       </motion.div>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'fra
 
 // Project data
 const projects = [
-  {
+  {                      
     id: 1,
     title: "Dashboards",
     category: "web",
@@ -266,21 +266,13 @@ const Projects = () => {
 
                     {/* Enhanced Action Buttons */}
                     <div className="flex gap-4">
-                      <motion.button
-                        whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => setSelectedProject(project)}
-                        className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
-                      >
-                        View Details
-                      </motion.button>
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors"
+                        className="w-full px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors text-center"
                       >
                         GitHub
                       </motion.a>

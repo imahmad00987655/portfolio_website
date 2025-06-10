@@ -86,6 +86,21 @@ const ContactForm = () => {
   // Work experience data
   const workExperience = [
     {
+      company: "ZepTechLogix",
+      position: "Assistant Project Manager",
+      period: "Jan 2025 - Present(Part-time)",
+      location: "Lahore, Punjab, Pakistan",
+      achievements: [
+        "Supported a software development team in delivering projects using Agile practices",
+        "Assisted in system design, followed coding guidelines, and worked with tools like CI/CD and Docker",
+        "Helped team members by reviewing code and sharing suggestions to improve their work",
+        "Took part in managing multiple tasks and keeping track of deadlines using Jira",
+        "Communicated with both technical and business teams to understand requirements and break them into clear steps"
+      ],
+      technologies: ["Agile", "CI/CD", "Docker", "Jira"],
+      impact: "Enhanced project delivery efficiency through effective team support and process management"
+    },
+    {
       company: "Master Molty Foam",
       position: "Software Developer",
       period: "Feb 2024 - Present",
