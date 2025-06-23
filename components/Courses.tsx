@@ -60,7 +60,7 @@ const Courses = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
-    <section id="courses" className="py-20 relative overflow-hidden min-h-screen">
+    <section id="courses" className="py-12 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent animate-pulse"></div>
@@ -122,7 +122,7 @@ const Courses = () => {
           className="max-w-6xl mx-auto"
         >
           <motion.h2 
-            className="text-6xl font-bold text-center mb-16"
+            className="text-6xl font-bold text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
@@ -134,7 +134,7 @@ const Courses = () => {
 
           {/* Enhanced Courses Grid */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -151,8 +151,8 @@ const Courses = () => {
                   className="group relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10"
                 >
                   {/* Course Info with enhanced animations */}
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-3">
                       <motion.h3 
                         className="text-xl font-semibold text-white"
                         whileHover={{ scale: 1.02 }}
@@ -164,10 +164,10 @@ const Courses = () => {
                       </span>
                     </div>
                     
-                    <p className="text-gray-300 text-sm mb-4">{course.description}</p>
+                    <p className="text-gray-300 text-sm mb-3">{course.description}</p>
                     
                     {/* Enhanced Skills */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-3">
                       {course.skills.map((skill) => (
                         <motion.span 
                           key={skill}
@@ -180,7 +180,7 @@ const Courses = () => {
                     </div>
 
                     {/* Course Details */}
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-3">
                       <span>Completed: {course.completionDate}</span>
                     </div>
 
@@ -190,20 +190,10 @@ const Courses = () => {
                         whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setSelectedCourse(course)}
-                        className="flex-1 px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                        className="w-full px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
                       >
                         View Details
                       </motion.button>
-                      <motion.a
-                        href={course.certificate}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors"
-                      >
-                        Certificate
-                      </motion.a>
                     </div>
                   </div>
                 </motion.div>

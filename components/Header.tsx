@@ -11,12 +11,12 @@ const Header = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Resume', path: '/resume' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '#home' },
+    { name: 'About', path: '#about' },
+    { name: 'Projects', path: '#projects' },
+    { name: 'Courses', path: '#courses' },
+    { name: 'Resume', path: '#resume' },
+    { name: 'Contact', path: '#contact' },
   ];
 
   useEffect(() => {
@@ -26,6 +26,14 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (path: string) => {
+    const element = document.querySelector(path);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.header
@@ -47,7 +55,10 @@ const Header = () => {
       <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="relative group">
+          <button 
+            onClick={() => handleNavClick('#home')}
+            className="relative group"
+          >
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
@@ -55,23 +66,20 @@ const Header = () => {
               M Ahmad Khan
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.path}
-                href={item.path}
-                className={`relative group ${
-                  pathname === item.path ? 'text-white' : 'text-gray-300 hover:text-white'
-                }`}
+                onClick={() => handleNavClick(item.path)}
+                className="relative group text-gray-300 hover:text-white"
               >
                 <span className="relative z-10">{item.name}</span>
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
                   initial={{ scaleX: 0 }}
-                  animate={{ scaleX: pathname === item.path ? 1 : 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -80,7 +88,7 @@ const Header = () => {
                   initial={{ scale: 0.8 }}
                   whileHover={{ scale: 1 }}
                 />
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -131,15 +139,10 @@ const Header = () => {
             <nav className="container mx-auto px-4 py-4 relative">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <Link
+                  <button
                     key={item.path}
-                    href={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`relative group p-2 rounded-lg ${
-                      pathname === item.path 
-                        ? 'bg-white/10 text-white' 
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
+                    onClick={() => handleNavClick(item.path)}
+                    className="relative group p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 text-left"
                   >
                     <span className="relative z-10">{item.name}</span>
                     <motion.div
@@ -147,7 +150,7 @@ const Header = () => {
                       initial={{ scale: 0.8 }}
                       whileHover={{ scale: 1 }}
                     />
-                  </Link>
+                  </button>
                 ))}
               </div>
             </nav>
