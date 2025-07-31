@@ -5,8 +5,18 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'fra
 
 // Project data
 const projects = [
-  {                      
+  {
     id: 1,
+    title: "Eval Flow Central",
+    category: "web",
+    description: "A comprehensive full-stack evaluation and quality assurance system for call centers and customer service teams. Features role-based access control for agents, officers, team leads, and admins. Includes performance tracking, evaluation management, detailed reporting, and real-time analytics. Built with modern technologies for efficient operations and seamless user experience.",
+    technologies: ["React", "TypeScript", "PHP", "MySQL", "Tailwind CSS", "Chart.js", "RESTful API"],
+    demo: "https://demo.com",
+    github: "https://github.com/imahmad00987655/evaluation-system",
+    featured: true
+  },
+  {                      
+    id: 2,
     title: "Dashboards",
     category: "web",
     description: "Developed comprehensive dashboards for the customer services department using React, Vue.js, and Power BI. Implemented real-time data visualization, customer interaction tracking, and performance metrics to improve service efficiency and decision-making.",
@@ -16,7 +26,7 @@ const projects = [
     featured: true
   },
   {
-    id: 2,
+    id: 3,
     title: "Callback Disposition System",
     category: "web",
     description: "Built a sophisticated callback disposition form system using PHP/Laravel to track and manage customer interaction history. Features include automated call scheduling, interaction logging, and performance analytics.",
@@ -26,7 +36,7 @@ const projects = [
     featured: true
   },
   {
-    id: 3,
+    id: 4,
     title: "AI-Powered Travel App",
     category: "mobile",
     description: "Developed a cross-platform travel application using Flutter and Node.js, integrated with AI features for personalized travel recommendations, route optimization, and smart itinerary planning.",
