@@ -11,8 +11,7 @@ const projects = [
     category: "web",
     description: "A comprehensive full-stack evaluation and quality assurance system for call centers and customer service teams. Features role-based access control for agents, officers, team leads, and admins. Includes performance tracking, evaluation management, detailed reporting, and real-time analytics. Built with modern technologies for efficient operations and seamless user experience.",
     technologies: ["React", "TypeScript", "PHP", "MySQL", "Tailwind CSS", "Chart.js", "RESTful API"],
-    demo: "https://demo.com",
-    github: "https://github.com/imahmad00987655/evaluation-system",
+    github: "https://github.com/imahmad00987655/Evaluation-Management-System",
     featured: true
   },
   {                      
@@ -30,9 +29,8 @@ const projects = [
     title: "Callback Disposition System",
     category: "web",
     description: "Built a sophisticated callback disposition form system using PHP/Laravel to track and manage customer interaction history. Features include automated call scheduling, interaction logging, and performance analytics.",
-    technologies: ["PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"],
-    demo: "https://demo.com",
-    github: "https://github.com",
+    technologies: ["Next.js", "PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"],
+    github: "https://github.com/imahmad00987655/disposition_system",
     featured: true
   },
   {
@@ -41,7 +39,6 @@ const projects = [
     category: "mobile",
     description: "Developed a cross-platform travel application using Flutter and Node.js, integrated with AI features for personalized travel recommendations, route optimization, and smart itinerary planning.",
     technologies: ["Flutter", "Node.js", "AI/ML", "REST APIs", "Firebase"],
-    demo: "https://demo.com",
     github: "https://github.com/imahmad00987655/AI_travel_mobile_application",
     featured: true
   },
@@ -51,7 +48,6 @@ const projects = [
     category: "web",
     description: "Designed and developed a modern portfolio website for graphic designers using Vue.js and React. Features include project galleries, client testimonials, and interactive design showcases.",
     technologies: ["Vue.js", "React", "Tailwind CSS", "Framer Motion"],
-    demo: "https://demo.com",
     github: "https://github.com/imahmad00987655/Makers",
     featured: true
   },
@@ -61,7 +57,6 @@ const projects = [
     category: "web",
     description: "Developed a robust API integration and testing framework using Node.js. Implemented automated testing, data validation, and seamless data transfer between different systems.",
     technologies: ["Node.js", "Express", "Mysql", "Postman", "MongoDB"],
-    demo: "https://demo.com",
     github: "https://github.com/imahmad00987655/Customer_service_api",
     featured: true
   },
@@ -71,7 +66,6 @@ const projects = [
     category: "web",
     description: "Built a modern, responsive portfolio website using Next.js. Features include smooth animations, dark mode, and interactive project showcases.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    demo: "https://demo.com",
     github: "https://github.com/imahmad00987655/portfolio_website",
     featured: true
   },
@@ -81,8 +75,16 @@ const projects = [
     category: "web",
     description: "Developed a specialized CRM system for visa consultancy and advisory services using PHP/Laravel. Features include client visa application tracking, document management system, appointment scheduling, case status updates, automated email notifications, and multi-country visa requirement database. Implemented secure document storage, client communication portal, and comprehensive reporting for visa success rates and processing times.",
     technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap", "Redis", "WebSockets", "AWS S3"],
-    demo: "https://demo.com",
     github: "https://github.com/imahmad00987655/CRM_in_php",
+    featured: true
+  },
+  {
+    id: 9,
+    title: "Security firm Application",
+    category: "mobile",
+    description: "The Security Management Mobile App is a cross-platform solution for managing security operations, shifts, patrol verification, and incident workflows. Built using Flutter and Firebase, it delivers scalability, real-time communication, and a smooth user experience across Android and iOS. The system includes detailed documentation, structured modules, and follows agile practices for efficient delivery.",
+    technologies: ["Flutter", "React", "Mongodb", "Firebase"],
+    github: "https://github.com/imahmad00987655",
     featured: true
   }
 ];
@@ -133,12 +135,11 @@ const Projects = () => {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden min-h-screen">
+    <section id="projects" className="py-12 relative overflow-hidden bg-black">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.05),transparent_50%)]"></div>
       </div>
 
       {/* Floating orbs with enhanced animations */}
@@ -194,37 +195,58 @@ const Projects = () => {
           style={{ y, opacity }}
           className="max-w-6xl mx-auto"
         >
-          <motion.h2 
-            className="text-6xl font-bold text-center mb-16"
+          <motion.div 
+            className="text-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">
-              My Projects
-            </span>
-          </motion.h2>
+            <motion.p
+              className="text-blue-400 text-sm font-medium mb-4 tracking-wider uppercase"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              My Work
+            </motion.p>
+            <motion.h2 
+              className="text-5xl md:text-6xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Featured Projects
+            </motion.h2>
+            <motion.p
+              className="text-gray-400 text-lg max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              A collection of projects I've worked on, showcasing my skills and experience
+            </motion.p>
+          </motion.div>
 
           {/* Enhanced Category Filter */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-3 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             {categories.map((category) => (
               <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/25'
-                    : 'bg-white/5 text-gray-300 hover:bg-white/10'
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
                 }`}
-                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-lg">{category.icon}</span>
+                <span className="text-base">{category.icon}</span>
                 {category.name}
               </motion.button>
             ))}
@@ -232,60 +254,87 @@ const Projects = () => {
 
           {/* Enhanced Projects Grid */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
             <AnimatePresence>
-              {filteredProjects.map((project) => (
+              {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="group relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10"
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 cursor-pointer"
+                  onClick={() => setSelectedProject(project)}
                 >
-                  {/* Project Image with enhanced hover effect */}
-                  
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
 
                   {/* Project Info with enhanced animations */}
-                  <div className="p-6">
-                    <motion.h3 
-                      className="text-xl font-semibold text-white mb-2"
-                      whileHover={{ scale: 1.02 }}
-                    >
-                      {project.title}
-                    </motion.h3>
-                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                  <div className="p-6 relative z-10">
+                    <div className="flex items-start justify-between mb-3">
+                      <motion.h3 
+                        className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        {project.title}
+                      </motion.h3>
+                      <motion.div
+                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        whileHover={{ rotate: 45 }}
+                      >
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </motion.div>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3 leading-relaxed">{project.description}</p>
                     
                     {/* Enhanced Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech) => (
-                        <motion.span 
+                      {project.technologies.slice(0, 4).map((tech) => (
+                        <span 
                           key={tech}
-                          className="px-2 py-1 text-xs rounded-full bg-white/10 text-gray-300"
-                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+                          className="px-3 py-1 text-xs rounded-lg bg-white/10 text-gray-200 border border-white/20 font-medium"
                         >
                           {tech}
-                        </motion.span>
+                        </span>
                       ))}
+                      {project.technologies.length > 4 && (
+                        <span className="px-3 py-1 text-xs rounded-lg bg-white/5 text-gray-400 border border-white/10">
+                          +{project.technologies.length - 4}
+                        </span>
+                      )}
                     </div>
 
                     {/* Enhanced Action Buttons */}
-                    <div className="flex gap-4">
+                    <div className="flex gap-3">
                       <motion.a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+                        onClick={(e) => e.stopPropagation()}
+                        whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="w-full px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors text-center"
+                        className="flex-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-medium transition-colors text-center border border-white/10"
                       >
-                        GitHub
+                        View Code
                       </motion.a>
+                      <motion.button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedProject(project);
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                      >
+                        Details
+                      </motion.button>
                     </div>
                   </div>
                 </motion.div>
@@ -340,7 +389,7 @@ const Projects = () => {
                 
                 
                 <motion.p 
-                  className="text-gray-300 mb-6 leading-relaxed"
+                  className="text-gray-200 mb-6 leading-relaxed text-base"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
@@ -359,8 +408,8 @@ const Projects = () => {
                       {selectedProject.technologies.map((tech) => (
                         <motion.span 
                           key={tech}
-                          className="px-3 py-1 rounded-full bg-white/10 text-gray-300"
-                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+                          className="px-3 py-1 rounded-full bg-white/15 text-gray-200 border border-white/20 font-medium"
+                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.25)" }}
                         >
                           {tech}
                         </motion.span>

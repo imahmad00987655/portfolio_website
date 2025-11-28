@@ -73,8 +73,9 @@ const Footer = () => {
                 M Ahmad Khan
               </motion.div>
             </Link>
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              Full-stack developer passionate about creating innovative web solutions. Specializing in React, Node.js, and modern web technologies.
+            <p className="text-gray-200 text-lg leading-relaxed max-w-md">
+              Full Stack Developer and Aspiring Technical Project Manager. Passionate about creating innovative web solutions 
+              and leading technical teams. Specializing in React, Node.js, Agile methodologies, and modern web technologies.
             </p>
             {/* Newsletter Subscription */}
             <form onSubmit={handleSubscribe} className="mt-8">
@@ -84,7 +85,7 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all duration-300 text-white placeholder-gray-400"
+                  className="flex-1 px-6 py-3 rounded-xl bg-white/10 border border-white/20 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all duration-300 text-white placeholder-gray-400"
                   required
                 />
                 <motion.button
@@ -117,7 +118,7 @@ const Footer = () => {
                 >
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-white transition-colors text-lg group relative inline-block"
+                    className="text-gray-200 hover:text-white transition-colors text-lg group relative inline-block font-medium"
                   >
                     {item}
                     <motion.div
@@ -173,10 +174,10 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-20 pt-8 border-t border-white/10 text-center"
         >
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-200 text-lg">
             © {currentYear} M Ahmad Khan. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm mt-2">
+          <p className="text-gray-300 text-sm mt-2">
             Crafted with ❤️ by Ahmad Khan
           </p>
         </motion.div>

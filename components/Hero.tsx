@@ -23,7 +23,7 @@ const Hero = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Full Stack Developer 💻', 'Web App Developer 🌐', 'Mobile App Developer 📱', 'Data Visualization Expert 📊', 'API Engineer 🔌'],
+      strings: ['Full Stack Developer 💻', 'Aspiring Technical Project Manager 📋', 'Web App Developer 🌐', 'Mobile App Developer 📱', 'Data Visualization Expert 📊', 'API Engineer 🔌'],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
@@ -76,9 +76,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 animate-gradient-shift"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
       
       {/* Floating orbs */}
       {isClient && (
@@ -179,42 +181,45 @@ const Hero = () => {
         className="absolute inset-0"
       />
       
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 max-w-7xl mx-auto">
           {/* Left side - Text content */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 text-center md:text-left"
+            className="flex-1 text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
+              <motion.p
+                className="text-blue-400 text-sm md:text-base font-medium mb-4 tracking-wider uppercase"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                Welcome to my Portfolio
+              </motion.p>
+              
               <motion.h1 
-                className="text-4xl md:text-6xl font-bold text-white mb-4"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
                 Hi, I'm{' '}
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
                     {displayedName}
                   </span>
-                  <motion.span
-                    className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                  />
                 </span>
               </motion.h1>
               
               <motion.h2 
-                className="text-2xl md:text-3xl text-gray-300 mb-8"
+                className="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-6 font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -222,18 +227,19 @@ const Hero = () => {
                 I'm a{' '}
                 <span 
                   ref={el} 
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-gradient-x"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 font-semibold"
                 />
               </motion.h2>
 
               <motion.p 
-                className="text-gray-300 text-lg mb-8 max-w-lg"
+                className="text-gray-300 text-lg md:text-xl mb-6 max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                ✨ Passionate about creating beautiful and functional web experiences 🌐, mobile applications 📱, 
-                and data visualization in custom dashboards 📊. Let's build something amazing together! 🚀
+                Full Stack Developer passionate about creating beautiful and functional web experiences, mobile applications, 
+                and data visualization. Aspiring Technical Project Manager with hands-on experience in Agile methodologies, 
+                team collaboration, and project delivery. Let's build something amazing together!
               </motion.p>
             </motion.div>
 
@@ -241,29 +247,32 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <motion.button 
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full font-semibold overflow-hidden transition-all duration-300"
+                className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all duration-300 text-lg"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Hire Me
+                <span className="relative z-10">Get In Touch</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </motion.button>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
-              className="flex gap-4 justify-center md:justify-start mt-8"
-            >
               
+              <motion.button 
+                whileHover={{ scale: 1.05, borderColor: "rgba(255, 255, 255, 0.6)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 rounded-lg font-semibold border-2 border-white/30 text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300 text-lg backdrop-blur-sm"
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects');
+                  projectsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                View My Work
+              </motion.button>
             </motion.div>
           </motion.div>
 
@@ -272,9 +281,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex-1 flex justify-center"
+            className="flex-1 flex justify-center lg:justify-end"
           >
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] mt-8">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem]">
               {/* Outer rotating ring */}
               <motion.div
                 className="absolute inset-0 rounded-full"
@@ -300,7 +309,7 @@ const Hero = () => {
 
               {/* Profile picture container with hover effect */}
               <motion.div 
-                className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20"
+                className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
@@ -312,6 +321,7 @@ const Hero = () => {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: 'cover' }}
                   priority
+                  className="rounded-2xl"
                 />
 
                 {/* Shine effect overlay */}

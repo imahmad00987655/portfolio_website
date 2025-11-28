@@ -12,6 +12,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', path: '#home' },
+    { name: 'Experience', path: '#experience' },
     { name: 'About', path: '#about' },
     { name: 'Projects', path: '#projects' },
     { name: 'Courses', path: '#courses' },
@@ -74,7 +75,7 @@ const Header = () => {
               <button
                 key={item.path}
                 onClick={() => handleNavClick(item.path)}
-                className="relative group text-gray-300 hover:text-white"
+                className="relative group text-gray-200 hover:text-white font-medium transition-colors"
               >
                 <span className="relative z-10">{item.name}</span>
                 <motion.div
@@ -142,7 +143,7 @@ const Header = () => {
                   <button
                     key={item.path}
                     onClick={() => handleNavClick(item.path)}
-                    className="relative group p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 text-left"
+                    className="relative group p-2 rounded-lg text-gray-200 hover:text-white hover:bg-white/10 text-left font-medium transition-colors"
                   >
                     <span className="relative z-10">{item.name}</span>
                     <motion.div

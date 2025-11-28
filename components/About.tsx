@@ -51,12 +51,11 @@ const About = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden min-h-screen">
+    <section id="about" className="py-12 relative overflow-hidden bg-black">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(147,51,234,0.05),transparent_50%)]"></div>
       </div>
 
       {/* Floating orbs with enhanced animations */}
@@ -111,16 +110,37 @@ const About = () => {
         style={{ y, opacity }}
         className="max-w-6xl mx-auto"
       >
-        <motion.h2 
-          className="text-6xl font-bold text-center mb-8"
+        <motion.div
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient-x">
+          <motion.p
+            className="text-blue-400 text-sm font-medium mb-4 tracking-wider uppercase"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             About Me
-          </span>
-        </motion.h2>
+          </motion.p>
+          <motion.h2 
+            className="text-5xl md:text-6xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Get to Know Me
+          </motion.h2>
+          <motion.p
+            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            Learn more about my background, skills, and passion for development
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 items-center">
           {/* Left side - Image and Bio */}
@@ -219,46 +239,71 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <h3 className="text-3xl font-bold text-white">Who am I?</h3>
-            <p className="text-gray-300 leading-relaxed">
-              I'm a passionate full-stack developer with a keen eye for design and a love for creating
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">Who am I?</h3>
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              I'm a passionate Full Stack Developer with a keen eye for design and a love for creating
               beautiful, functional web applications. With expertise in modern web technologies and
               a strong foundation in both frontend and backend development, I strive to build
               seamless user experiences that make a difference.
             </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              As an <span className="text-blue-400 font-semibold">Aspiring Technical Project Manager</span>, I combine my technical expertise with project management skills. 
+              I have hands-on experience in Agile methodologies, team collaboration, code reviews, and project delivery. 
+              My goal is to bridge the gap between technical teams and business objectives, ensuring successful project outcomes 
+              while maintaining high code quality and team efficiency.
+            </p>
             
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-white">My Skills</h4>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  'React', 'JavaScript', 'TypeScript', 'Node.js', 
-                  'HTML5', 'CSS3', 'Bootstrap 5', 'Tailwind CSS',
-                  'Vue.js', 'PHP', 'Python/Django', 'Flutter'
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 rounded-full bg-white/5 text-white text-sm hover:bg-white/10 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-3">My Skills</h4>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'React', 'JavaScript', 'TypeScript', 'Node.js', 
+                    'HTML5', 'CSS3', 'Bootstrap 5', 'Tailwind CSS',
+                    'Vue.js', 'PHP', 'Python/Django', 'Flutter'
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300 border border-white/20 shadow-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-white">Tools & Software</h4>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  'VS Code 💻', 'Visual Studio 🛠️', 'DBeaver Community 🗄️', 'Postman 📮', 
-                  'Power BI 📊', 'Android Studio 📱', 'PyCharm 🐍', 'Docker 🐳'
-                ].map((tool) => (
-                  <span
-                    key={tool}
-                    className="px-4 py-2 rounded-full bg-white/5 text-white text-sm hover:bg-white/10 transition-colors"
-                  >
-                    {tool}
-                  </span>
-                ))}
+              
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-3">Tools & Software</h4>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'VS Code', 'Visual Studio', 'DBeaver', 'Postman', 
+                    'Power BI', 'Android Studio', 'PyCharm', 'Docker'
+                  ].map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300 border border-white/20 shadow-sm"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-semibold text-white mb-3">Project Management & Methodologies</h4>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    'Agile', 'Scrum', 'Jira', 'CI/CD', 
+                    'Code Reviews', 'Team Leadership', 'Project Planning', 'Stakeholder Management'
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white text-sm font-medium hover:from-blue-500/30 hover:to-purple-500/30 hover:scale-105 transition-all duration-300 border border-blue-400/30 shadow-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 

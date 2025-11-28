@@ -60,12 +60,11 @@ const Courses = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
 
   return (
-    <section id="courses" className="py-12 relative overflow-hidden">
+    <section id="courses" className="py-12 relative overflow-hidden bg-black">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-500/10 via-transparent to-transparent animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(34,197,94,0.05),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
       </div>
 
       {/* Floating orbs with enhanced animations */}
@@ -121,16 +120,37 @@ const Courses = () => {
           style={{ y, opacity }}
           className="max-w-6xl mx-auto"
         >
-          <motion.h2 
-            className="text-6xl font-bold text-center mb-12"
+          <motion.div
+            className="text-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 animate-gradient-x">
+            <motion.p
+              className="text-green-400 text-sm font-medium mb-4 tracking-wider uppercase"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              Education & Learning
+            </motion.p>
+            <motion.h2 
+              className="text-5xl md:text-6xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               Certifications & Courses
-            </span>
-          </motion.h2>
+            </motion.h2>
+            <motion.p
+              className="text-gray-400 text-lg max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Continuous learning and professional development
+            </motion.p>
+          </motion.div>
 
           {/* Enhanced Courses Grid */}
           <motion.div 
@@ -148,7 +168,7 @@ const Courses = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  className="group relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10"
+                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10"
                 >
                   {/* Course Info with enhanced animations */}
                   <div className="p-4">
@@ -164,14 +184,14 @@ const Courses = () => {
                       </span>
                     </div>
                     
-                    <p className="text-gray-300 text-sm mb-3">{course.description}</p>
+                    <p className="text-gray-300 text-sm mb-3 leading-relaxed">{course.description}</p>
                     
                     {/* Enhanced Skills */}
                     <div className="flex flex-wrap gap-2 mb-3">
                       {course.skills.map((skill) => (
                         <motion.span 
                           key={skill}
-                          className="px-2 py-1 text-xs rounded-full bg-white/10 text-gray-300"
+                          className="px-3 py-1 text-xs rounded-lg bg-white/10 text-gray-200 border border-white/20 font-medium"
                           whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
                         >
                           {skill}
@@ -180,7 +200,7 @@ const Courses = () => {
                     </div>
 
                     {/* Course Details */}
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-3">
+                    <div className="flex items-center justify-between text-sm text-gray-300 mb-3 font-medium">
                       <span>Completed: {course.completionDate}</span>
                     </div>
 
@@ -249,7 +269,7 @@ const Courses = () => {
               {/* Modal Content */}
               <div className="p-6 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 80px)' }}>
                 <motion.p 
-                  className="text-gray-300 mb-6 leading-relaxed"
+                  className="text-gray-200 mb-6 leading-relaxed text-base"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
@@ -268,8 +288,8 @@ const Courses = () => {
                       {selectedCourse.skills.map((skill) => (
                         <motion.span 
                           key={skill}
-                          className="px-3 py-1 rounded-full bg-white/10 text-gray-300"
-                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+                          className="px-3 py-1 rounded-lg bg-white/15 text-gray-200 border border-white/20 font-medium"
+                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.25)" }}
                         >
                           {skill}
                         </motion.span>
