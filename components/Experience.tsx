@@ -31,7 +31,7 @@ const Experience = () => {
   const workExperience = [
     {
       company: "ZepTechLogix",
-      position: "Assistant Project Manager",
+      position: "Assistant Technical Project Manager",
       period: "Jan 2025 - Present(Part-time)",
       location: "Lahore, Punjab, Pakistan",
       achievements: [
