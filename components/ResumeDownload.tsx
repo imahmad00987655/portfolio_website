@@ -8,11 +8,8 @@ const ResumeDownload = () => {
 
   return (
     <section id="resume" className="py-12 relative overflow-hidden bg-black">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.05),transparent_50%)]"></div>
-      </div>
+      {/* Solid background - no gradients */}
+      <div className="absolute inset-0 bg-black" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -52,14 +49,13 @@ const ResumeDownload = () => {
             <motion.a
               href="/mycv.pdf"
               download="Ahmad_Khan_Resume.pdf"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold overflow-hidden text-lg"
+              className="group relative px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors text-lg"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -109,10 +105,10 @@ const ResumeDownload = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="p-4 sm:p-6 border-b border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10">
+              <div className="p-4 sm:p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center">
                   <motion.h3 
-                    className="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+                    className="text-xl sm:text-2xl font-semibold text-blue-400"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
@@ -144,11 +140,11 @@ const ResumeDownload = () => {
               </div>
 
               {/* Download Button */}
-              <div className="p-4 sm:p-6 border-t border-white/10 bg-gradient-to-r from-blue-500/5 to-purple-500/5">
+              <div className="p-4 sm:p-6 border-t border-white/10 bg-white/5">
                 <motion.a
                   href="/mycv.pdf"
                   download="Ahmad_Khan_Resume.pdf"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500 transition-colors"
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -5,86 +5,100 @@ import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'fra
 
 // Project data
 const projects = [
+  // 1️⃣ ZepTechLogix Projects (Technical PM)
   {
     id: 1,
-    title: "Eval Flow Central",
+    title: "Visa Consultancy CRM",
     category: "web",
-    description: "A comprehensive full-stack evaluation and quality assurance system for call centers and customer service teams. Features role-based access control for agents, officers, team leads, and admins. Includes performance tracking, evaluation management, detailed reporting, and real-time analytics. Built with modern technologies for efficient operations and seamless user experience.",
+    description: "Developed a specialized CRM system for visa consultancy and advisory services using PHP/Laravel. Features include client visa application tracking, document management, appointment scheduling, case status updates, automated email notifications, and multi-country visa requirement database. Led technical design and development, coordinated team, ensured proper architecture, security, and workflow automation.",
+    technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap", "Redis", "WebSockets", "AWS S3"],
+    github: "https://github.com/imahmad00987655/CRM_in_php",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Security Firm Application",
+    category: "mobile",
+    description: "Cross-platform mobile app for managing security operations, shifts, patrol verification, and incident workflows. Oversaw architecture, modular design, agile workflow, real-time communication, scalability, and documentation standards. Built using Flutter and Firebase for smooth Android/iOS experience.",
+    technologies: ["Flutter", "React", "MongoDB", "Firebase"],
+    github: "https://github.com/imahmad00987655",
+    featured: true
+  },
+
+  // 2️⃣ Master Group Projects (Customer/CS Focused)
+  {
+    id: 3,
+    title: "AI-Powered Travel App",
+    category: "mobile",
+    description: "Cross-platform travel app with AI-powered personalized recommendations, route optimization, and smart itinerary planning. Provided technical guidance and implemented real-time solutions using Flutter and Node.js.",
+    technologies: ["Flutter", "Node.js", "AI/ML", "REST APIs", "Firebase"],
+    github: "https://github.com/imahmad00987655/AI_travel_mobile_application",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "CS Chatbot",
+    category: "web",
+    description: "Developed AI chatbot for customer support using OpenAI and FireCrawl APIs. Features runtime customer data training from Excel/Word, voice interaction, and real-time answers for CS agents. Integrated uploader for custom datasets and voice-to-text responses.",
+    technologies: ["OpenAI API", "FireCrawl API", "JavaScript", "Node.js", "React", "Voice-to-Text"],
+    github: "https://github.com/imahmad00987655/CS_Chatbot",
+    featured: true
+  },
+
+  // 3️⃣ Programmer / Software Development Projects
+  {
+    id: 5,
+    title: "Evaluation Flow Central System",
+    category: "web",
+    description: "Comprehensive full-stack evaluation and QA system for call centers with analytics, performance tracking, role-based access. Built with modern technologies for efficient operations and seamless UX.",
     technologies: ["React", "TypeScript", "PHP", "MySQL", "Tailwind CSS", "Chart.js", "RESTful API"],
     github: "https://github.com/imahmad00987655/Evaluation-Management-System",
     featured: true
   },
-  {                      
-    id: 2,
+  {
+    id: 6,
     title: "Dashboards",
     category: "web",
-    description: "Developed comprehensive dashboards for the customer services department using React, Vue.js, and Power BI. Implemented real-time data visualization, customer interaction tracking, and performance metrics to improve service efficiency and decision-making.",
+    description: "Developed interactive dashboards for customer services department; real-time metrics, visualizations, and performance tracking. Technologies include React, Vue.js, Power BI, Node.js.",
     technologies: ["React", "Vue.js", "Power BI", "Node.js", "Data Visualization"],
     demo: "https://drive.google.com/drive/folders/1411zyfDO-W_5lp2YXf1C2UDWrmJapwNI",
     github: "https://github.com/imahmad00987655",
     featured: true
   },
   {
-    id: 3,
+    id: 7,
     title: "Callback Disposition System",
     category: "web",
-    description: "Built a sophisticated callback disposition form system using PHP/Laravel to track and manage customer interaction history. Features include automated call scheduling, interaction logging, and performance analytics.",
+    description: "Automated callback disposition form system to track and manage customer interaction history. Features automated scheduling, interaction logging, and performance analytics.",
     technologies: ["Next.js", "PHP", "Laravel", "MySQL", "JavaScript", "Bootstrap"],
     github: "https://github.com/imahmad00987655/disposition_system",
     featured: true
   },
   {
-    id: 4,
-    title: "AI-Powered Travel App",
-    category: "mobile",
-    description: "Developed a cross-platform travel application using Flutter and Node.js, integrated with AI features for personalized travel recommendations, route optimization, and smart itinerary planning.",
-    technologies: ["Flutter", "Node.js", "AI/ML", "REST APIs", "Firebase"],
-    github: "https://github.com/imahmad00987655/AI_travel_mobile_application",
-    featured: true
-  },
-  {
-    id: 5,
-    title: "Graphic website",
+    id: 8,
+    title: "Graphic Website",
     category: "web",
-    description: "Designed and developed a modern portfolio website for graphic designers using Vue.js and React. Features include project galleries, client testimonials, and interactive design showcases.",
+    description: "Portfolio website for graphic designers with project galleries, client testimonials, and interactive showcases. Built modern responsive UI using Vue.js and React.",
     technologies: ["Vue.js", "React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/imahmad00987655/Makers",
     featured: true
   },
   {
-    id: 6,
+    id: 9,
     title: "API Integration Framework",
     category: "web",
-    description: "Developed a robust API integration and testing framework using Node.js. Implemented automated testing, data validation, and seamless data transfer between different systems.",
-    technologies: ["Node.js", "Express", "Mysql", "Postman", "MongoDB"],
+    description: "Robust API integration and testing framework with automated testing, data validation, and seamless data transfer between systems.",
+    technologies: ["Node.js", "Express", "MySQL", "MongoDB", "Postman"],
     github: "https://github.com/imahmad00987655/Customer_service_api",
     featured: true
   },
   {
-    id: 7,
+    id: 10,
     title: "Personal Portfolio",
     category: "web",
-    description: "Built a modern, responsive portfolio website using Next.js. Features include smooth animations, dark mode, and interactive project showcases.",
+    description: "Modern responsive portfolio website with smooth animations, dark mode, and interactive project showcases.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/imahmad00987655/portfolio_website",
-    featured: true
-  },
-  {
-    id: 8,
-    title: "Visa Consultancy CRM",
-    category: "web",
-    description: "Developed a specialized CRM system for visa consultancy and advisory services using PHP/Laravel. Features include client visa application tracking, document management system, appointment scheduling, case status updates, automated email notifications, and multi-country visa requirement database. Implemented secure document storage, client communication portal, and comprehensive reporting for visa success rates and processing times.",
-    technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap", "Redis", "WebSockets", "AWS S3"],
-    github: "https://github.com/imahmad00987655/CRM_in_php",
-    featured: true
-  },
-  {
-    id: 9,
-    title: "Security firm Application",
-    category: "mobile",
-    description: "The Security Management Mobile App is a cross-platform solution for managing security operations, shifts, patrol verification, and incident workflows. Built using Flutter and Firebase, it delivers scalability, real-time communication, and a smooth user experience across Android and iOS. The system includes detailed documentation, structured modules, and follows agile practices for efficient delivery.",
-    technologies: ["Flutter", "React", "Mongodb", "Firebase"],
-    github: "https://github.com/imahmad00987655",
     featured: true
   }
 ];
@@ -93,8 +107,8 @@ const categories = [
   { id: 'all', name: 'All Projects', icon: '✨' },
   { id: 'web', name: 'Web Development', icon: '🌐' },
   { id: 'mobile', name: 'Mobile Development', icon: '📱' },
-  { id: 'ai', name: 'AI/ML', icon: '🤖' },
-  { id: 'design', name: 'Design', icon: '🎨' }
+  { id: 'ai', name: 'AI/ML & Chatbot', icon: '🤖' },
+  { id: 'design', name: 'Design & UI/UX', icon: '🎨' }
 ];
 
 const Projects = () => {
@@ -136,17 +150,14 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-12 relative overflow-hidden bg-black">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.05),transparent_50%)]"></div>
-      </div>
+      {/* Solid background - no gradients */}
+      <div className="absolute inset-0 bg-black" />
 
-      {/* Floating orbs with enhanced animations */}
+      {/* Floating orbs - solid color */}
       {isClient && orbs.map((orb, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
+          className="absolute rounded-full bg-blue-500/10 blur-3xl"
           style={{
             width: `${orb.width}px`,
             height: `${orb.height}px`,
@@ -240,7 +251,7 @@ const Projects = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -268,17 +279,16 @@ const Projects = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 cursor-pointer"
+                  className="group relative bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-all duration-300"></div>
 
                   {/* Project Info with enhanced animations */}
                   <div className="p-6 relative z-10">
                     <div className="flex items-start justify-between mb-3">
                       <motion.h3 
-                        className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300"
+                        className="text-xl font-bold text-white group-hover:text-blue-400 transition-all duration-300"
                         whileHover={{ scale: 1.02 }}
                       >
                         {project.title}
@@ -331,7 +341,7 @@ const Projects = () => {
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 px-4 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                        className="flex-1 px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-500 transition-colors"
                       >
                         Details
                       </motion.button>
@@ -365,7 +375,7 @@ const Projects = () => {
               {/* Modal Header */}
               <div className="sticky top-0 p-6 border-b border-white/10 bg-[#181f2a]/95 z-10 flex justify-between items-start">
                 <motion.h3 
-                  className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"
+                  className="text-2xl font-semibold text-blue-400"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -429,7 +439,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-center font-medium hover:opacity-90 transition-opacity"
+                      className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg text-center font-medium hover:bg-blue-500 transition-colors"
                     >
                       Demo
                     </motion.a>

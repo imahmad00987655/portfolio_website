@@ -31,56 +31,70 @@ const Experience = () => {
   const workExperience = [
     {
       company: "ZepTechLogix",
-      position: "Assistant Project Manager",
-      period: "Jan 2025 - Present(Part-time)",
+      position: "Technical Project Manager (Part_Time)", 
+      period: "Feb 2025 - present",
       location: "Lahore, Punjab, Pakistan",
       achievements: [
-        "Supported a software development team in delivering projects using Agile practices",
-        "Assisted in system design, followed coding guidelines, and worked with tools like CI/CD and Docker",
-        "Helped team members by reviewing code and sharing suggestions to improve their work",
-        "Took part in managing multiple tasks and keeping track of deadlines using Jira",
-        "Communicated with both technical and business teams to understand requirements and break them into clear steps"
+        "Coordinated with clients and stakeholders to gather requirements, define project scope, and translate business needs into technical tasks",
+        "Led cross-functional teams including developers and SQA engineers, ensuring smooth sprint execution and timely project delivery",
+        "Managed project workflows using Jira and ClickUp, tracking progress, risks, and deadlines across multiple projects",
+        "Oversaw deployment processes, post-release validation, and client handover to ensure successful production delivery",
+        "Prepared project documentation, task breakdowns, and technical specifications to align team execution with project goals",
+        "Acted as a bridge between technical teams and business stakeholders, improving communication efficiency and delivery clarity"
       ],
-      technologies: ["Agile", "CI/CD", "Docker", "Jira"],
-      impact: "Enhanced project delivery efficiency through effective team support and process management"
+      technologies: ["Agile", "Jira", "ClickUp", "CI/CD", "Docker", "Project Documentation"],
+      impact: "Improved delivery coordination and stakeholder alignment by implementing structured project tracking and communication processes"
     },
     {
-      company: "Master Molty Foam",
+      company: "Master Molty Foam (Master Group)",
       position: "Software Developer",
-      period: "Feb 2024 - Present",
-      location: "",
+      period: "Feb 2023 - present",
+      location: "Lahore, Pakistan",
       achievements: [
-        "Maintained and updated the company's legacy website, ensuring functionality and performance improvements",
-        "Developed various custom websites and dashboards, tailored to departmental needs for improved data visualization and accessibility",
-        "Designed and implemented multiple forms for the department's internal website, optimizing workflows and information collection",
-        "Created and customized Power BI dashboards to present data insights effectively, aiding decision-making"
+        "Developed and maintained custom web applications, dashboards, and internal systems to support multiple business departments",
+        "Designed data visualization solutions using Power BI and custom-coded dashboards to provide actionable insights for decision-making",
+        "Managed server deployments, feature updates, and system enhancements to ensure performance, scalability, and reliability",
+        "Provided technical support to end users, resolved system issues, and implemented new features based on business requirements",
+        "Built internal tools and automation workflows that improved operational efficiency and reduced manual processes",
+        "Worked across full-stack technologies to deliver scalable and user-focused solutions aligned with organizational needs"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "PHP/Laravel", "Python/Flask", "Vue.js", "React.js" ],
-      impact: "Improved departmental efficiency through custom solutions and data-driven insights"
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "PHP/Laravel", "Python/Flask", "Vue.js", "React.js", "Power BI"],
+      impact: "Enhanced departmental productivity through customized digital solutions, automation, and data-driven reporting"
     },
     {
       company: "Programmers Force",
       position: "Front-End Developer Intern",
       period: "Nov 2022 - Jan 2023",
-      location: "",
+      location: "Lahore, Pakistan",
       achievements: [
-        "Developed high end websites, utilizing HTML, CSS, JavaScript, Bootstrap and node.js, php, python to create an interactive, user-friendly interface",
-        "Applied responsive design principles and UX best practices to ensure a seamless user experience across various devices and browsers",
-        "Engaged in collaborative coding and peer review processes, participating in version control and team discussions to enhance code quality and ensure consistent standards across projects",
-        "Gained foundational experience in frontend technologies, enhancing problem-solving skills and developing a deeper understanding of the frontend development lifecycle"
+        "Developed responsive web interfaces using modern frontend technologies to improve usability and user engagement",
+        "Applied UI/UX best practices and responsive design principles across multiple projects and devices",
+        "Collaborated with development teams through version control and peer reviews to maintain code quality standards",
+        "Gained hands-on experience in frontend development lifecycle, debugging, and collaborative engineering workflows"
       ],
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "Vue.js"],
-      impact: "Contributed to team success through collaborative development and implementation of responsive web solutions"
+      impact: "Contributed to delivery of user-friendly web solutions through collaborative development practices"
+    },
+    {
+      company: "Pseudosquare",
+      position: "Developer Intern",
+      period: "2022",
+      location: "Lahore, Pakistan",
+      achievements: [
+        "Built 6+ interactive prototypes, increasing client approval rates by approximately 40%",
+        "Enhanced existing web applications with custom JavaScript features and performance improvements",
+        "Developed responsive user interfaces that improved mobile engagement by nearly 50%",
+        "Collaborated with senior developers to translate client requirements into functional prototypes"
+      ],
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      impact: "Improved client satisfaction through rapid prototyping and enhanced user experience design"
     }
   ];
 
   return (
     <section id="experience" className="py-12 relative overflow-hidden bg-black">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.05),transparent_50%)]"></div>
-      </div>
+      {/* Background - no gradients */}
+      <div className="absolute inset-0 bg-black" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -125,8 +139,7 @@ const Experience = () => {
               whileHover={{ scale: 1.02 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <div className="relative bg-gradient-to-br from-white/10 to-white/[0.02] rounded-xl p-5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
+              <div className="relative bg-white/5 rounded-xl p-5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
                 <div className="flex flex-col">
                   <div className="mb-3">
                     <h4 className="text-white font-semibold text-lg mb-1">{exp.position}</h4>
@@ -158,7 +171,7 @@ const Experience = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedExperience(exp)}
-                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity mt-auto"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-500 transition-colors mt-auto"
                   >
                     View Details
                   </motion.button>
@@ -188,10 +201,9 @@ const Experience = () => {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
               <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl border border-white/20 bg-white/10 backdrop-blur-2xl px-0 py-0">
-                {/* Gradient overlay for glassmorphism */}
-                <div className="absolute inset-0 rounded-3xl pointer-events-none bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/10" />
-                {/* Glowing border */}
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-400/40 via-purple-500/40 to-pink-400/40 blur-lg opacity-60 pointer-events-none" />
+                {/* Simple overlay */}
+                <div className="absolute inset-0 rounded-3xl pointer-events-none bg-white/5" />
+                <div className="absolute -inset-1 rounded-3xl border border-white/20 pointer-events-none" />
                 <div className="relative z-10 p-8">
                   <div className="flex justify-between items-start mb-6">
                     <div>
@@ -215,7 +227,7 @@ const Experience = () => {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-3">Key Achievements</h4>
+                    <h4 className="text-xl font-semibold text-blue-400 mb-3">Key Achievements</h4>
                     <ul className="space-y-2 pl-4 list-disc text-white/90">
                       {selectedExperience.achievements.map((achievement, index) => (
                         <motion.li
@@ -232,7 +244,7 @@ const Experience = () => {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-3">Technologies Used</h4>
+                    <h4 className="text-xl font-semibold text-blue-400 mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedExperience.technologies.map((tech, index) => (
                         <motion.span
@@ -249,7 +261,7 @@ const Experience = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-3">Impact</h4>
+                    <h4 className="text-xl font-semibold text-blue-400 mb-3">Impact</h4>
                     <p className="text-white/80 text-base leading-relaxed">{selectedExperience.impact}</p>
                   </div>
                 </div>

@@ -46,12 +46,8 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-gradient" />
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+      {/* No gradient background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" />
 
       <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between h-20">
@@ -62,11 +58,10 @@ const Header = () => {
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+              className="text-2xl font-bold text-blue-400"
             >
               M Ahmad Khan
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
           {/* Desktop Navigation */}
@@ -79,13 +74,13 @@ const Header = () => {
               >
                 <span className="relative z-10">{item.name}</span>
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
                 />
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-500/10 to-pink-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-blue-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={{ scale: 0.8 }}
                   whileHover={{ scale: 1 }}
                 />
@@ -100,7 +95,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors relative group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-blue-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <svg
               className="w-6 h-6 text-white relative z-10"
               fill="none"
@@ -136,7 +131,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-black/95 backdrop-blur-xl relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+            <div className="absolute inset-0" />
             <nav className="container mx-auto px-4 py-4 relative">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
@@ -147,7 +142,7 @@ const Header = () => {
                   >
                     <span className="relative z-10">{item.name}</span>
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 bg-blue-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ scale: 0.8 }}
                       whileHover={{ scale: 1 }}
                     />

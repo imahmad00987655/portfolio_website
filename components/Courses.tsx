@@ -61,17 +61,14 @@ const Courses = () => {
 
   return (
     <section id="courses" className="py-12 relative overflow-hidden bg-black">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(34,197,94,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-      </div>
+      {/* Solid background - no gradients */}
+      <div className="absolute inset-0 bg-black" />
 
-      {/* Floating orbs with enhanced animations */}
+      {/* Floating orbs - solid color */}
       {isClient && orbs.map((orb, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 blur-3xl"
+          className="absolute rounded-full bg-green-500/10 blur-3xl"
           style={{
             width: `${orb.width}px`,
             height: `${orb.height}px`,
@@ -168,7 +165,7 @@ const Courses = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/10"
+                  className="group relative bg-white/5 rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
                   {/* Course Info with enhanced animations */}
                   <div className="p-4">
@@ -210,7 +207,7 @@ const Courses = () => {
                         whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setSelectedCourse(course)}
-                        className="w-full px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+                        className="w-full px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-500 transition-colors"
                       >
                         View Details
                       </motion.button>
@@ -245,7 +242,7 @@ const Courses = () => {
               <div className="sticky top-0 p-6 border-b border-white/10 bg-[#181f2a]/95 z-10 flex justify-between items-start">
                 <div>
                   <motion.h3 
-                    className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
+                    className="text-2xl font-semibold text-green-400"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
@@ -309,7 +306,7 @@ const Courses = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg text-center font-medium hover:opacity-90 transition-opacity"
+                      className="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg text-center font-medium hover:bg-green-500 transition-colors"
                     >
                       View Certificate
                     </motion.a>

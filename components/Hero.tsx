@@ -23,7 +23,14 @@ const Hero = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['Full Stack Developer 💻', 'Aspiring Technical Project Manager 📋', 'Web App Developer 🌐', 'Mobile App Developer 📱', 'Data Visualization Expert 📊', 'API Engineer 🔌'],
+      strings: [
+        'Technical Project Manager 📋',
+        'Software Engineer 💻',
+        'Agile Project Delivery 🚀',
+        'Data Visualization & Reporting 📊',
+        'System & API Architecture 🔌',
+        'Cross-Functional Team Leadership 🤝'
+      ],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
@@ -77,18 +84,15 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+      {/* Solid background - no gradients */}
       
-      {/* Floating orbs */}
+      {/* Floating orbs - solid color */}
       {isClient && (
         <div className="absolute inset-0 overflow-hidden">
           {orbs.map((orb, i) => (
             <motion.div
               key={i}
-              className="absolute rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-3xl"
+              className="absolute rounded-full bg-blue-500/10 blur-3xl"
               style={{
                 width: `${orb.width}px`,
                 height: `${orb.height}px`,
@@ -212,7 +216,7 @@ const Hero = () => {
               >
                 Hi, I'm{' '}
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                  <span className="text-blue-400">
                     {displayedName}
                   </span>
                 </span>
@@ -227,7 +231,7 @@ const Hero = () => {
                 I'm a{' '}
                 <span 
                   ref={el} 
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 font-semibold"
+                  className="text-blue-400 font-semibold"
                 />
               </motion.h2>
 
@@ -237,9 +241,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                Full Stack Developer passionate about creating beautiful and functional web experiences, mobile applications, 
-                and data visualization. Aspiring Technical Project Manager with hands-on experience in Agile methodologies, 
-                team collaboration, and project delivery. Let's build something amazing together!
+                Technical Project Manager with Full Stack Development experience, skilled in Agile delivery, stakeholder coordination, and technical execution. My engineering background enables me to bridge the gap between business and development teams to deliver scalable, high-quality solutions.
               </motion.p>
             </motion.div>
 
@@ -252,14 +254,13 @@ const Hero = () => {
               <motion.button 
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all duration-300 text-lg"
+                className="group relative bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all duration-300 text-lg hover:bg-blue-500"
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
                   contactSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </motion.button>
               
               <motion.button 
@@ -302,10 +303,8 @@ const Hero = () => {
                 <div className="absolute inset-0 rounded-full border-2 border-dashed border-white/20"></div>
               </motion.div>
 
-              {/* Animated gradient border */}
-              <div className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              </div>
+              {/* Simple border */}
+              <div className="absolute inset-0 rounded-full border-2 border-white/30"></div>
 
               {/* Profile picture container with hover effect */}
               <motion.div 
@@ -326,7 +325,7 @@ const Hero = () => {
 
                 {/* Shine effect overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  className="absolute inset-0 bg-white/10"
                   initial={{ x: '-100%' }}
                   animate={{ x: '100%' }}
                   transition={{
@@ -340,7 +339,7 @@ const Hero = () => {
 
               {/* Decorative elements */}
               <motion.div 
-                className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30"
+                className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.5, 0.3],
@@ -353,7 +352,7 @@ const Hero = () => {
                 }}
               />
               <motion.div 
-                className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"
+                className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"
                 animate={{
                   scale: [1.2, 1, 1.2],
                   opacity: [0.5, 0.3, 0.5],

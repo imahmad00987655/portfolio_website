@@ -52,17 +52,14 @@ const About = () => {
 
   return (
     <section id="about" className="py-12 relative overflow-hidden bg-black">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(147,51,234,0.05),transparent_50%)]"></div>
-      </div>
+      {/* Solid background - no gradients */}
+      <div className="absolute inset-0 bg-black" />
 
-      {/* Floating orbs with enhanced animations */}
+      {/* Floating orbs - solid color */}
       {isClient && orbs.map((orb, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"
+          className="absolute rounded-full bg-blue-500/10 blur-3xl"
           style={{
             width: `${orb.width}px`,
             height: `${orb.height}px`,
@@ -124,7 +121,7 @@ const About = () => {
           >
             About Me
           </motion.p>
-          <motion.h2 
+          <motion.h2
             className="text-5xl md:text-6xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -158,10 +155,10 @@ const About = () => {
                   key={`border-${i}`}
                   className="absolute inset-0 rounded-2xl"
                   animate={{ rotate: 360 }}
-                  transition={{ 
-                    duration: 20 + i * 5, 
-                    repeat: Infinity, 
-                    ease: "linear" 
+                  transition={{
+                    duration: 20 + i * 5,
+                    repeat: Infinity,
+                    ease: "linear"
                   }}
                 >
                   <div className="absolute inset-0 rounded-2xl border-2 border-dashed border-white/20"></div>
@@ -169,8 +166,8 @@ const About = () => {
               ))}
 
               {/* Glowing background with pulse */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse opacity-20"></div>
-              
+              <div className="absolute inset-0 rounded-2xl bg-blue-500/10"></div>
+
               {/* Main image container */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white/20">
                 <Image
@@ -185,7 +182,7 @@ const About = () => {
                 {/* Enhanced shine effect */}
                 {isClient && (
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    className="absolute inset-0 bg-white/10"
                     initial={{ x: '-100%' }}
                     animate={{ x: '100%' }}
                     transition={{
@@ -201,8 +198,8 @@ const About = () => {
               {/* Enhanced decorative elements */}
               {isClient && (
                 <>
-                  <motion.div 
-                    className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30"
+                  <motion.div
+                    className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"
                     animate={{
                       scale: [1, 1.2, 1],
                       opacity: [0.3, 0.5, 0.3],
@@ -214,8 +211,8 @@ const About = () => {
                       ease: "easeInOut",
                     }}
                   />
-                  <motion.div 
-                    className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-2xl opacity-30"
+                  <motion.div
+                    className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"
                     animate={{
                       scale: [1.2, 1, 1.2],
                       opacity: [0.5, 0.3, 0.5],
@@ -240,27 +237,38 @@ const About = () => {
             className="space-y-4"
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">Who am I?</h3>
+
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
-              I'm a passionate Full Stack Developer with a keen eye for design and a love for creating
-              beautiful, functional web applications. With expertise in modern web technologies and
-              a strong foundation in both frontend and backend development, I strive to build
-              seamless user experiences that make a difference.
+              I'm a Technical Project Manager with a strong foundation in Full Stack Software Development,
+              enabling me to effectively lead technical teams while understanding system architecture,
+              development challenges, and business requirements. My experience spans across building
+              scalable applications, managing deployments, and delivering data-driven solutions that
+              create real organizational impact.
             </p>
+
             <p className="text-gray-300 text-lg leading-relaxed mb-4">
-              As an <span className="text-blue-400 font-semibold">Aspiring Technical Project Manager</span>, I combine my technical expertise with project management skills. 
-              I have hands-on experience in Agile methodologies, team collaboration, code reviews, and project delivery. 
-              My goal is to bridge the gap between technical teams and business objectives, ensuring successful project outcomes 
-              while maintaining high code quality and team efficiency.
+              With hands-on experience in <span className="text-blue-400 font-semibold">Agile project delivery, stakeholder coordination, and cross-functional team leadership</span>,
+              I focus on ensuring projects are delivered on time, aligned with business goals, and executed with technical excellence.
+              My software engineering background allows me to bridge the gap between business stakeholders and development teams,
+              improving communication, reducing risks, and driving successful project outcomes.
             </p>
-            
+
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              I am passionate about optimizing workflows, supporting team performance, and leveraging data visualization
+              to enable better decision-making. My goal is to combine technical expertise with strategic leadership
+              to deliver impactful digital products and scalable solutions.
+            </p>
+
             <div className="space-y-4">
+
+              {/* Technical Skills */}
               <div>
-                <h4 className="text-xl font-semibold text-white mb-3">My Skills</h4>
+                <h4 className="text-xl font-semibold text-white mb-3">Technical Skills</h4>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    'React', 'JavaScript', 'TypeScript', 'Node.js', 
+                    'React', 'Vue.js', 'JavaScript', 'TypeScript', 'Node.js',
                     'HTML5', 'CSS3', 'Bootstrap 5', 'Tailwind CSS',
-                    'Vue.js', 'PHP', 'Python/Django', 'Flutter'
+                    'PHP/Laravel', 'Python/Flask', 'Flutter', 'SQL', 'Power BI', 'API Development'
                   ].map((skill) => (
                     <span
                       key={skill}
@@ -271,13 +279,15 @@ const About = () => {
                   ))}
                 </div>
               </div>
-              
+
+              {/* Tools & Platforms */}
               <div>
-                <h4 className="text-xl font-semibold text-white mb-3">Tools & Software</h4>
+                <h4 className="text-xl font-semibold text-white mb-3">Tools & Platforms</h4>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    'VS Code', 'Visual Studio', 'DBeaver', 'Postman', 
-                    'Power BI', 'Android Studio', 'PyCharm', 'Docker'
+                    'VS Code', 'Visual Studio', 'DBeaver', 'Postman',
+                    'Power BI', 'Android Studio', 'PyCharm', 'Docker',
+                    'Git/GitHub', 'Jenkins', 'CI/CD', 'Figma', 'Slack'
                   ].map((tool) => (
                     <span
                       key={tool}
@@ -288,26 +298,29 @@ const About = () => {
                   ))}
                 </div>
               </div>
-              
+
+              {/* Project Management & Methodologies */}
               <div>
                 <h4 className="text-xl font-semibold text-white mb-3">Project Management & Methodologies</h4>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    'Agile', 'Scrum', 'Jira', 'CI/CD', 
-                    'Code Reviews', 'Team Leadership', 'Project Planning', 'Stakeholder Management'
+                    'Agile', 'Scrum', 'Kanban', 'Jira', 'ClickUp',
+                    'Project Planning', 'Stakeholder Management', 'Code Reviews',
+                    'Team Leadership', 'Risk Management', 'Deployment Oversight'
                   ].map((skill) => (
                     <span
                       key={skill}
-                      className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white text-sm font-medium hover:from-blue-500/30 hover:to-purple-500/30 hover:scale-105 transition-all duration-300 border border-blue-400/30 shadow-sm"
+                      className="px-4 py-2 rounded-lg bg-blue-500/20 text-white text-sm font-medium hover:bg-blue-500/30 hover:scale-105 transition-all duration-300 border border-blue-400/30"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
+
             </div>
 
-            
+
           </motion.div>
         </div>
       </motion.div>
