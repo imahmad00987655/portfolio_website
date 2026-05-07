@@ -13,8 +13,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'M Ahmad Khan - Technical Project Manager',
-  description: 'Full Stack Developer and Aspiring Technical Project Manager. Passionate about creating innovative web solutions and leading technical teams with Agile methodologies.',
+  title: 'Full-Stack Engineer | Technical Project Manager | Data Analytics Specialist',
+  description: 'Full Stack Developer and Technical Project Manager. Passionate about creating innovative web solutions and leading technical teams with Agile methodologies.',
   icons: {
     icon: [
       {
