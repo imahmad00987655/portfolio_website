@@ -47,7 +47,7 @@ const Experience = () => {
     },
     {
       company: "Master Molty Foam (Master Group)",
-      position: "Software Developer",
+      position: "Full Stack Software Developer",
       period: "Feb 2024",
       location: "Lahore, Pakistan",
       achievements: [
