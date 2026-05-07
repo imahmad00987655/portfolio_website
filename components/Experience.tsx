@@ -31,8 +31,8 @@ const Experience = () => {
   const workExperience = [
     {
       company: "ZepTechLogix",
-      position: "Technical Project Manager", 
-      period: "Feb 2024 - present",
+      position: "Technical Project Manager(Part-Time)", 
+      period: "Feb 2025 - present",
       location: "Lahore, Punjab, Pakistan",
       achievements: [
         "Coordinated with clients and stakeholders to gather requirements, define project scope, and translate business needs into technical tasks",
@@ -48,7 +48,7 @@ const Experience = () => {
     {
       company: "Master Molty Foam (Master Group)",
       position: "Software Developer",
-      period: "Feb 2023",
+      period: "Feb 2024",
       location: "Lahore, Pakistan",
       achievements: [
         "Developed and maintained custom web applications, dashboards, and internal systems to support multiple business departments",
